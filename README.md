@@ -14,7 +14,7 @@ There are two key objectives:
 6. Build a Power BI dashboard to visualise the most common keywords
 7. Check alignment between word search and CV and update CV to form a comprehensive overview that includes most popular words
 8. Search for custom keywords and identify relevant job postings
-9. Share results on LinkedIn via a post
+9. Share results with interested parties
 
 # Documentation
 - The Python code will be stored on github
@@ -33,11 +33,22 @@ There are two key objectives:
 The generic syntax for URL is: https://www.reed.co.uk/api/{versionnumber}/search?keywords={keywords}&locationName={locationName}&employerId={employerId}&distanceFromLocation={distance in miles}
 See https://www.reed.co.uk/developers/jobseeker for more details.
 
-# Using the Python program for generating Excel spreadsheet and updating Power Bi dashboard
-The Python program transforms data from the API call into an Excel spreadsheet. Here are the steps to follow to create the Excel spreasheet:
+# Using the Python program for generating Excel spreadsheet with job data and updating Power Bi main dashboard
+The first Python program transforms data from the API call into an Excel spreadsheet. 
+
+Here are the steps to follow to create the Excel spreasheet:
 1. In Postman, make a call to the API as described above
 1. Copy the results of the call into the text file called 'json_results.txt'. Save and close the file
-1. Run the Python program ('Reed-analysis.py'). Output is saved in 'dataframe_export.xlsx'
+1. Run the Python program ('Reed_analysis.py'). Output is saved in 'dataframe_export.xlsx'
+1. Open the Power Bi dashboard ('Reed_analysis.pbix') and on the Home tab, refresh the data
+
+# Using the Python program for generating Excel spreadsheet with word frequency and updating Power Bi main dashboard
+The next Python program transforms data from the API call into an Excel spreadsheet containing word frequencies. 
+
+Here are the steps to follow to create the Excel spreasheet:
+1. In Postman, make a call to the API as described above
+1. Copy the results of the call into the text file called 'json_results.txt'. Save and close the file
+1. Run the Python program ('Reed_word_analysis.py'). Output is saved in 'word_count_export.xlsx'
 1. Open the Power Bi dashboard ('Reed_analysis.pbix') and on the Home tab, refresh the data
 
 # Maniputations in Power BI
